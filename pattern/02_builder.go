@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package pattern
 
 /*
 	Реализовать паттерн «строитель». Объяснить применимость паттерна, его плюсы и минусы, а также реальные примеры
@@ -72,21 +70,4 @@ func (scb serverComputerBuilder) Build() computer {
 		RAM: 4,
 		MB:  "GA-X99P-SLI (rev. 1.0)",
 	}
-}
-
-func main() {
-	compBuilder := NewComputerBuilder()
-	comp := compBuilder.
-		CPU("AMD Ryzen 9 7950X").
-		RAM(16).
-		MB("ASUS ROG Crosshair X670E Extreme").
-		Build()
-
-	fmt.Println(comp)
-
-	serverCompBuilder := NewServerComputerBuilder()
-	serverCompBuilder.RAM(8)
-	serverComp := serverCompBuilder.Build()
-
-	fmt.Println(serverComp)
 }
