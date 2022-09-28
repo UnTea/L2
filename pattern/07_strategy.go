@@ -13,7 +13,7 @@ type PowerOfGamer interface {
 	Show(*character)
 }
 
-// character is a struct that contains character descriptions
+// character is a struct that contains character values
 type character struct {
 	name         string
 	lever        int
