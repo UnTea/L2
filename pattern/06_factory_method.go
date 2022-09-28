@@ -8,7 +8,7 @@ import "fmt"
 	https://en.wikipedia.org/wiki/Factory_method_pattern
 */
 
-// Class - an abstract interface for mmo in game character class
+// Class is an interface that returns in game character class name
 type Class interface {
 	GetClassName() string
 }
