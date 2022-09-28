@@ -43,15 +43,15 @@ func main() {
 2  
 1
 
-Выражение defer добавляет вызов функции после ключевого слова defer в стек приложения. 
-Все вызовы в стеке вызываются при возврате функции, в которой они добавлены. 
-Поскольку вызовы помещаются в стек, они производятся в порядке от последнего к первому.
+Оператор defer откладывает выполнение функции до тех пор, пока не вернется окружающая функция, либо в обычном режиме, 
+либо через panic. Аргументы отложенного вызова вычисляются немедленно, даже если вызов функции не выполняется до тех пор
+, пока не вернется окружающая функция. Если имеется несколько отложенных вызовов функций, они выполняются в порядке 
+"последний пришел - первым вышел".
 
 [В документации описывается следующее](https://go.dev/ref/spec#Defer_statements):
-For instance, if the deferred function is a function literal 
-and the surrounding function has named result parameters that are in scope within the literal, 
-the deferred function may access and modify the result parameters before they are returned. 
-If the deferred function has any return values, they are discarded when the function completes.
+For instance, if the deferred function is a function literal and the surrounding function has named result parameters 
+that are in scope within the literal, the deferred function may access and modify the result parameters before they are 
+returned. If the deferred function has any return values, they are discarded when the function completes.
 
 В нашем примере произойдёт следующее:
 
