@@ -77,7 +77,7 @@ func (s *securityCode) Check(incomingCode int) (result bool) {
 	return !result
 }
 
-// SendCode is a fucntion that returns random generated code for security check
+// SendCode is a function that returns random generated code for security check
 func (s *securityCode) SendCode() (code int) {
 	rand.Seed(time.Now().UnixNano())
 	code = rand.Int()
@@ -93,8 +93,8 @@ type user struct {
 	securityCode *securityCode
 }
 
-// newUser is a constructor of user structure
-func newUser(login, domain, password string) *user {
+// NewUser is a constructor of user structure
+func NewUser(login, domain, password string) *user {
 	return &user{
 		email:        NewEmail(login, domain),
 		password:     NewPassword(password),

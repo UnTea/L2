@@ -8,11 +8,13 @@ import "fmt"
 	https://en.wikipedia.org/wiki/Strategy_pattern
 */
 
+// PowerOfGamer is an interface that describe character interface
 type PowerOfGamer interface {
-	Show(*gamer)
+	Show(*character)
 }
 
-type gamer struct {
+// character is a struct that contains character descriptions
+type character struct {
 	name         string
 	lever        int
 	strength     int
@@ -22,42 +24,51 @@ type gamer struct {
 	power        PowerOfGamer
 }
 
-func NewGamer(name string, pow PowerOfGamer) *gamer {
-	return &gamer{
+// NewGamer is character constructor
+func NewGamer(name string, pow PowerOfGamer) *character {
+	return &character{
 		name:         name,
 		lever:        1,
 		strength:     10,
-		agility:      20,
-		intelligence: 50,
-		itemLevel:    10,
+		agility:      12,
+		intelligence: 8,
+		itemLevel:    5,
 		power:        pow,
 	}
 }
 
-func (g *gamer) SetPower(p PowerOfGamer) {
+// SetPower is a function that sets character power
+func (g *character) SetPower(p PowerOfGamer) {
 	g.power = p
 }
 
-func (g *gamer) ShowPower() {
+// ShowPower is a function that shows character power
+func (g *character) ShowPower() {
 	g.power.Show(g)
 }
 
+// powerByAverageStats is a struct that exists
 type powerByAverageStats struct{}
 
-func (pbas *powerByAverageStats) Show(g *gamer) {
+// Show is a function that shows average character power by average stats
+func (pbas *powerByAverageStats) Show(g *character) {
 	pow := (g.agility + g.intelligence + g.strength) / 3.
 
 	fmt.Printf("Power is equal to: %d\n", pow)
 }
 
+// powerByPlayerLevel is a struct that exists
 type powerByPlayerLevel struct{}
 
-func (pbpl *powerByPlayerLevel) Show(g *gamer) {
+// Show is a function that shows average character power by player lever
+func (pbpl *powerByPlayerLevel) Show(g *character) {
 	fmt.Printf("Power is equal to: %d\n", g.lever)
 }
 
+// powerByItemLever is a struct that exists
 type powerByItemLever struct{}
 
-func (pbil *powerByItemLever) Show(g *gamer) {
+// Show is a function that shows character power by item level
+func (pbil *powerByItemLever) Show(g *character) {
 	fmt.Printf("Power is equal to: %d\n", g.itemLevel)
 }

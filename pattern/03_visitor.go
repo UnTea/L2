@@ -56,8 +56,8 @@ type goblin struct {
 	lvl    int
 }
 
-// newGoblin ia a goblin construct
-func newGoblin(damage int) *goblin {
+// NewGoblin ia a goblin construct
+func NewGoblin(damage int) *goblin {
 	return &goblin{
 		damage: damage,
 		hp:     100,

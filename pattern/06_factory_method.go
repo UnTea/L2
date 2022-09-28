@@ -51,7 +51,7 @@ func (w *warrior) GetClassName() string {
 	return w.className
 }
 
-// GetClass is a fucntion that returns new MMO character
+// GetClass is a function that returns new MMO character
 func GetClass(className, charName string) (Class, error) {
 	switch className {
 	case "Warrior":
