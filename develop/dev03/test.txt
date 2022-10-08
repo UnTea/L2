@@ -1,0 +1,37 @@
+2bcd 3 asd
+cde 2 vdc
+3hij 5 sxs
+fgh 7 www
+jkl 7
+ijk 1
+11abc
+FGH
+33jkl 1
+def 2
+efg 3
+jkl -1
+ghi -2
+2 -3
+daxc +1
+daxc +11
+daxc +22
+dasd +2
+zxc +3
+vxc -3
+gtre +3
+{}
+```
+123
+21
+11
+33
+22
+1
+2
+3
++1
++2
++3
+-1
+-2
+-3
